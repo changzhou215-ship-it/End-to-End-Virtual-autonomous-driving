@@ -137,7 +137,7 @@ class NvidiaLightningModel(pl.LightningModule):  # LightningModel：表示这个
 # 2.训练主程序(几乎和Keras一模一样)
 if __name__ == '__main__':
     # 1.准备数据
-    train_data, val_data = split_train_val('data/driving_log.csv')
+    train_data, val_data = split_train_val('data_3/driving_log.csv')  # 修改路径同理
 
     train_loader = DataLoader(DrivingDataset(train_data, augment_data=True),  # num_workers=4意思是开启4个后台线程去读取数据
                               batch_size=CONFIG['batch_size'], shuffle=True, num_workers=4,  persistent_workers=True)
@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
     # 3.定义Callbacks回调函数(完美对应Keras代码里的四个Callback)
     checkpoint_callback = ModelCheckpoint(  # 自动保存模型 save_top_k=1保证它永远只保留val_loss最低的那一次模型
-        dirpath='logs/', filename='best_model', monitor='val_loss', save_top_k=1, mode='min'
+        dirpath='logs/', filename='best_model_3', monitor='val_loss', save_top_k=1, mode='min'
     )
     # 早停 如果连续10轮（patience=10）模型都没进步 说明已经学到极限了
     early_stop_callback = EarlyStopping(monitor='val_loss', patience=10, mode='min')  # 及时止损

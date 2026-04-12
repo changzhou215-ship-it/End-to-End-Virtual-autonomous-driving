@@ -29,20 +29,20 @@ requirements.txt: 项目运行所需的 Python 依赖库列表。
 
  **环境安装** : :anguished: 
 
-本项目指定的 Python 版本为 3.9.13（3.9.x 均可）。请千万不要用系统的全局环境，一定要建虚拟环境！
+本项目指定的Python版本为 3.9.13（3.9.x 均可）。请千万不要用系统的全局环境，一定要建虚拟环境！
 
-1、在 PyCharm 右下角找到 <No interpreter> 或当前显示的 Python 版本，点击它，选择 Add New Interpreter -> Add Local Interpreter...。
+1、在PyCharm右下角找到 <No interpreter> 或当前显示的 Python 版本，点击它，选择 Add New Interpreter -> Add Local Interpreter...。
 
-2、在弹出的窗口左侧选择 Virtualenv Environment（虚拟环境）。
+2、在弹出的窗口左侧选择Virtualenv Environment（虚拟环境）。
 
 3、勾选 New environment。
-Location: 默认会在项目目录下生成一个 venv 文件夹（保持默认即可）。
+Location: 默认会在项目目录下生成一个venv文件夹（保持默认即可）。
 Base interpreter: 下拉选择你电脑上的 Python 3.9 路径。
 
 4、点击 OK，等待 PyCharm 在底部跑完进度条创建环境。
 
  
-**安装依赖包** （依赖包还未上传）  :frowning: 
+**安装依赖包**  :frowning: 
 
 1、点击 PyCharm 最底部的 Terminal（终端） 标签页。
 
