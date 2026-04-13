@@ -1,3 +1,5 @@
+[中文版](README_zh.md)
+
 End-to-End Autonomous Driving Simulation Platform based on Tuanjie Engine
 
 ## Project Overview
