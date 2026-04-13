@@ -1,64 +1,65 @@
- **项目简介**  :laughing: 
+End-to-End Autonomous Driving Simulation Platform based on Tuanjie Engine
 
-本项目是一个基于深度学习的自动驾驶仿真控制系统。通过采集仿真环境中的驾驶数据（图像与转向角），训练端到端的神经网络模型，最终实现车辆在虚拟环境中的自主驾驶。
+## Project Overview
+This project is a deep learning-based control system for autonomous driving. By collecting driving data (camera images and steering angles) from a simulation environment, we train an end-to-end neural network to achieve autonomous navigation in virtual scenarios.
 
+## Key Features
+Simulation-Driven: Deep integration with Tuanjie Engine (Unity China) virtual environments.
 
- **核心特性** :smiley: 
+Flexible Architecture: The model architecture is migrated to the PyTorch Lightning framework, supporting rapid iteration and multi-hardware scaling.
 
-仿真驱动：深度集成 Tuanjie Engine 虚拟场景
+End-to-End Learning: Direct mapping from raw sensory input (pixels) to vehicle control commands (steering/throttle).
 
-架构灵活：模型部分已迁移至 PyTorch Lightning 框架，支持快速迭代和多硬件缩放
+## File Structure
+model.py: Core script for neural network architecture and training.
 
+drive.py: Server-side script for communication with the simulator. It processes real-time images and returns predicted steering angles and throttle.
 
- **文件结构说明**  :grinning: 
+load_data.py: Handles dataset loading, preprocessing, and data augmentation.
 
-model.py / keras.py: 神经网络模型的构建与训练脚本。（keras在当前的环境下用不了 我只是做了一个备份原keras框架的训练模型）
+config.py: Global configuration and hyperparameter management.
 
-drive.py: 与自动驾驶仿真器通信的服务器端脚本，负责接收实时图像并返回预测的转向角和油门。
+test.py: Script for model testing and validation.
 
-load_data.py: 数据集的加载、预处理与数据增强。
+requirements.txt: List of required Python dependencies.
 
-test.py: 测试脚本。
+keras_backup.py: (Legacy) Backup of the original Keras-based training model (Note: Primarily for reference; the current environment uses PyTorch).
 
-config.py: 项目全局参数与超参数配置文件。
+Note on Storage: To keep the repository lightweight, directories such as data/ (datasets), logs/ (training logs), and venv/ (virtual environments), as well as model weights (*.pth, *.h5, *.ckpt), are excluded via .gitignore.
 
-requirements.txt: 项目运行所需的 Python 依赖库列表。
+## Installation & Setup
+1. Environment Prerequisites
+Python Version: 3.9.13 (Compatible with any 3.9.x version).
 
- _注意_ ：为了保持代码仓库的轻量化，data/（数据集）、logs/（训练日志）、venv/（虚拟环境）以及所有模型权重文件（*.pth, *.h5, *.ckpt）已被 .gitignore 忽略，不会上传到 Git 仓库。
+Virtual Environment: It is highly recommended to use a virtual environment rather than a global system installation.
 
+2. Setting up with PyCharm
+In the bottom-right corner of PyCharm, click on the Python Interpreter (it may show <No interpreter>).
 
- **环境安装** : :anguished: 
+Select Add New Interpreter -> Add Local Interpreter....
 
-本项目指定的Python版本为 3.9.13（3.9.x 均可）。请千万不要用系统的全局环境，一定要建虚拟环境！
+In the left sidebar, choose Virtualenv Environment.
 
-1、在PyCharm右下角找到 <No interpreter> 或当前显示的 Python 版本，点击它，选择 Add New Interpreter -> Add Local Interpreter...。
+Ensure New environment is selected.
 
-2、在弹出的窗口左侧选择Virtualenv Environment（虚拟环境）。
+Location: The default venv folder in your project directory.
 
-3、勾选 New environment。
-Location: 默认会在项目目录下生成一个venv文件夹（保持默认即可）。
-Base interpreter: 下拉选择你电脑上的 Python 3.9 路径。
+Base interpreter: Select the path to your Python 3.9 executable.
 
-4、点击 OK，等待 PyCharm 在底部跑完进度条创建环境。
+Click OK and wait for PyCharm to initialize the environment.
 
- 
-**安装依赖包**  :frowning: 
+3. Installing Dependencies
+Open the Terminal tab at the bottom of PyCharm.
 
-1、点击 PyCharm 最底部的 Terminal（终端） 标签页。
+Ensure the prompt is prefixed with (venv), indicating the virtual environment is active.
 
-2、确认终端前面带有 (venv) 字样（这代表你已经进入了虚拟环境）。
-在终端中输入以下命令并回车，耐心等待安装完成（可能需要几分钟到十几分钟，取决于网速）：
+Run the following command to install all necessary packages:
 
+Bash
 `pip install -r requirements.txt`
+If the download speed is slow, you can use a mirror (e.g., Tsinghua Open Source Mirror):
 
-( 提示：如果下载速度太慢报错，可以加上清华源加速：pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple)
+Bash
+`pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`
 
-
-团队成员与分工 :star: 
-
-@周畅：模型架构设计、仓库管理及整体调度
-
-@廖钰绮
-
-@李可可
-
+@ZhouChang (Lead): Model architecture design, repository management, and project coordination.
