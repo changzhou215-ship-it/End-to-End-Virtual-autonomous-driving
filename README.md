@@ -56,10 +56,13 @@ Ensure the prompt is prefixed with (venv), indicating the virtual environment is
 Run the following command to install all necessary packages:
 
 Bash
+
 `pip install -r requirements.txt`
+
 If the download speed is slow, you can use a mirror (e.g., Tsinghua Open Source Mirror):
 
 Bash
+
 `pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`
 
 @ZhouChang (Lead): Model architecture design, repository management, and project coordination.
