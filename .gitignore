@@ -6,3 +6,5 @@ data/
 *.ckpt
 logs/
 data_3/
+plot_loss.py
+loss_curve.png
